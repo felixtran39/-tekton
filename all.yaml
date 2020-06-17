@@ -59,7 +59,7 @@ spec:
               - name: repo
                 mountPath: /repo
     - name: kustomizing
-      image: nekottyo/kustomize-kubeval
+      image: gcr.io/yuwenma-gke-playground/kustomize
       command:
               - kustomize
       args:
