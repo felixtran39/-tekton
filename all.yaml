@@ -58,47 +58,15 @@ spec:
       volumeMounts:
               - name: repo
                 mountPath: /repo
-    - name: get-kustomize
-      image: gcr.io/cloud-builders/go
-      command: 
-              - go
-      args:
-              - get
-              - sigs.k8s.io/kustomize
-      env:
-              - name: GO111MODULE
-                value: "on"
-      image: alpine
-      command:
-              - mv
-      args:
-              - kustomize
-              - /usr/local/bin
-      command:
-              - echo
-      args:
-              - hello      
-      volumeMounts:
-              - name: repo
-                mountPath: /repo
     - name: kustomizing
+      image: nekottyo/kustomize-kubeval
       command:
               - kustomize
       args:
               - build
-              - https://github.com/felixtran38/tekton.git
+              - "git::https://github.com/felixtran39/tekton.git"
               - "-o"
               - /repo/demo/skaffold.yaml
-    - name: echo
-      image: alpine
-      command:
-              - cat
-      args:
-              - /repo/demo/skaffold.yaml
-      command:
-              - ls
-      args:
-              - /usr/local
       volumeMounts:
               - name: repo
                 mountPath: /repo
