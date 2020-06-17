@@ -1,5 +1,4 @@
-bases:
-        - https://github.com/felixtran39/demo.git
+resources:
+        - git::https://github.com/felixtran39/demo.git
 namePrefix: overlaying-
-images:
-        - name: gcr.io/yuwenma-gke-playground/img
+
