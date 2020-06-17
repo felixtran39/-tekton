@@ -1,7 +1,5 @@
 bases:
-        - https://github.com/felixtran39/demo.git #https://github.com/felixtran39/demo.git
+        - git@github.com:felixtran39/demo.git #https://github.com/felixtran39/demo.git
 namePrefix: overlay-
-#namespace: kustomize-namespace
 images:
         - name: gcr.io/yuwenma-gke-playground/img
-          #newName: gcr.io/yuwenma-gke-playground/overlay-img
