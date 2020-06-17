@@ -1,6 +1,4 @@
 resources:
         - git::https://github.com/felixtran39/demo.git
-images:
-        - name: gcr.io/yuwenma-gke-playground/img
-          newTag: build-from-pipeline
-
+patchesStrategicMerge:
+        - tagging-patch.yaml
