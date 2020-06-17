@@ -1,5 +1,5 @@
 bases:
-        - git@github.com:felixtran39/demo.git #https://github.com/felixtran39/demo.git
+        - https://github.com/felixtran39/demo.git
 namePrefix: overlay-
 images:
         - name: gcr.io/yuwenma-gke-playground/img
