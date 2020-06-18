@@ -4,4 +4,6 @@ metadata:
         name: skaffold-file
 build:
         tagPolicy:
-                gitCommit: {8}
+                dateTime:
+                        format: "YYYY-MM-DD_HH-mm-ss_MST"
+                        timezone: "Local"
