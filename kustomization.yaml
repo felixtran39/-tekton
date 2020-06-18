@@ -1,5 +1,5 @@
 resources:
-        - /repo/demo/skaffold.yaml
+        - demo/skaffold.yaml
 patchesStrategicMerge:
         - tagging.yaml
         - image-destination.yaml
