@@ -4,6 +4,4 @@ metadata:
         name: skaffold-file
 build:
         tagPolicy:
-                dateTime:
-                        format: "2006-01-02_15-04-05_MST"
-                        timezone: "Local"
+                dateTime: {}
