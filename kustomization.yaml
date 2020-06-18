@@ -1,5 +1,5 @@
 resources:
-        - git::https://github.com/felixtran39/demo.git
+        - /repo/demo/skaffold.yaml
 patchesStrategicMerge:
         - tagging.yaml
         - image-destination.yaml
