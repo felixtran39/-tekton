@@ -6,4 +6,4 @@ build:
         tagPolicy:
                 dateTime:
                         format: "2006-01-02_15-04-05_ET"
-                        timezone: "ET"
+                        timezone: "Local"
