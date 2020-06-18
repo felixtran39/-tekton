@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1alpha1
 kind: PipelineResource
 metadata:
-  name: demo-git
+  name: app-repo
 spec:
   type: git
   params:
@@ -41,7 +41,7 @@ spec:
       default: /workspace/docker-source
   resources:
     inputs:
-      - name: docker-source
+      - name: app-repo
         type: git
     outputs:
       - name: builtImage
@@ -53,7 +53,7 @@ spec:
               - git
       args:
               - clone
-              - https://github.com/felixtran39/demo.git
+              - $(resources.inputs.app-repo.url)
               - /repo/demo
       volumeMounts:
               - name: repo
@@ -113,9 +113,9 @@ spec:
       value: /workspace/docker-source #configure: may change according to your source
   resources:
     inputs:
-      - name: docker-source
+      - name: app-repo
         resourceRef:
-          name: demo-git
+          name: app-repo
     outputs:
       - name: builtImage
         resourceRef:
