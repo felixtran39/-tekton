@@ -1,5 +1,5 @@
 resources:
-        - git::https://github.com/felixtran39/tekton.git
+        - git::https://github.com/felixtran39/demo.git
 patchesStrategicMerge:
         - tagging.yaml
         - image-destination.yaml
