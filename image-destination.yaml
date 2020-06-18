@@ -1,0 +1,7 @@
+apiVersion: skaffold/v2beta4
+kind: Config
+metadata:
+        name: skaffold-file
+build:
+        artifacts:
+                - image: gcr.io/yuwenma-gke-playground/new-destination

@@ -1,4 +1,5 @@
 resources:
         - git::https://github.com/felixtran39/demo.git
 patchesStrategicMerge:
-        - tagging-patch.yaml
+        - tagging.yaml
+        - image-destination.yaml

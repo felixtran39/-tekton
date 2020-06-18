@@ -12,40 +12,14 @@ spec:
 ---
 
 apiVersion: tekton.dev/v1alpha1
-kind: PipelineResource
-metadata:
-  name: push-loc
-spec:
-  type: image
-  params:
-    - name: url
-      value: gcr.io/yuwenma-gke-playground/pl-test-img
-
----
-
-apiVersion: tekton.dev/v1alpha1
 kind: Task
 metadata:
   name: build
 spec:
-  params:
-    - name: pathToDockerFile
-      type: string
-      description: The path to the dockerfile to build
-      default: /workspace/docker-source/Dockerfile
-    - name: pathToContext
-      type: string
-      description:
-        The build context used by Kaniko
-        (https://github.com/GoogleContainerTools/kaniko#kaniko-build-contexts)
-      default: /workspace/docker-source
   resources:
     inputs:
       - name: app-repo
         type: git
-    outputs:
-      - name: builtImage
-        type: image
   steps:
     - name: cloning
       image: gcr.io/cloud-builders/git
@@ -106,17 +80,8 @@ metadata:
 spec:
   taskRef:
     name: build
-  params:
-    - name: pathToDockerFile
-      value: /workspace/docker-source/Dockerfile
-    - name: pathToContext
-      value: /workspace/docker-source #configure: may change according to your source
   resources:
     inputs:
       - name: app-repo
         resourceRef:
           name: app-repo
-    outputs:
-      - name: builtImage
-        resourceRef:
-          name: push-loc
