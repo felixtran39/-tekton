@@ -1,5 +1,5 @@
 resources:
-        - demo/skaffold.yaml
+        - git::https://github.com/felixtran39/tekton.git
 patchesStrategicMerge:
         - tagging.yaml
         - image-destination.yaml
