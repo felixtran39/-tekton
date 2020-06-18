@@ -5,5 +5,5 @@ metadata:
 build:
         tagPolicy:
                 dateTime:
-                        format: "YYYY-MM-DD_HH-mm-ss_MST"
-                        timezone: "Local"
+                        format: "2006-01-02_15-04-05_ET"
+                        timezone: "ET"
