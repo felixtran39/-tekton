@@ -4,5 +4,4 @@ metadata:
         name: skaffold-file
 build:
         tagPolicy:
-                gitCommit:
-                        variant: AbbrevCommitSha
+                dateTime: {}
