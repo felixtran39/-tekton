@@ -38,7 +38,7 @@ spec:
               - kustomize
       args:
               - build
-              - "git::https://github.com/felixtran39/tekton.git"
+              - "git::https://github.com/felixtran39/tekton.git/base"
               - "-o"
               - /repo/demo/skaffold.yaml
       volumeMounts:
