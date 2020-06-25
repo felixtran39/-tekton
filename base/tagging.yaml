@@ -1,7 +1,7 @@
 apiVersion: skaffold/v2beta4
 kind: Config
 metadata: 
-        name: skaffold-file
+        name: config
 build:
         tagPolicy:
-                dateTime: {}
+                gitCommit: {}
